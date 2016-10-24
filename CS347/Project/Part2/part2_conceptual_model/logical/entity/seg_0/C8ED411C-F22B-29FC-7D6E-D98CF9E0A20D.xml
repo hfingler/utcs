@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C8ED411C-F22B-29FC-7D6E-D98CF9E0A20D" name="A_Employee">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:18:41 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>29865E5C-B981-A08F-4A04-9C8A11354D74</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="employee_id" id="5831FF7D-2598-7973-DF55-B0CA058671EC">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:18:49 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="salary" id="712563E6-ADBA-1A3F-0C22-178782722025">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:19:10 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="salary_exception" id="0F690BF6-64F0-0D46-843F-A01C0DF3A08C">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:19:10 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="employee_id1" id="68E54D29-C348-7E0C-9272-1907ECB6BE65">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:25:15 UTC</createdTime>
+<generatorID>9EC2EFC0-CB40-A5FB-A575-711D627804C7</generatorID>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>5831FF7D-2598-7973-DF55-B0CA058671EC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C90FE0EA-EB56-B207-7E1B-9D123E22131D" name="A_Employee PK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:19:29 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="8F500B81-7519-FA39-7D47-520872302636" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5831FF7D-2598-7973-DF55-B0CA058671EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

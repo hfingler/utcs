@@ -1,0 +1,49 @@
+# Caio Lente (ctl684)
+
+# Setup stack
+	.pos 0
+	irmovq stack, %rsp
+	call main
+	halt
+
+.align 8
+# Source block
+src:
+   .quad 0x00a
+   .quad 0x0b0
+   .quad 0xc00
+# Destination block
+dest:
+	.quad 0x111
+   .quad 0x222
+   .quad 0x333
+
+main:
+	irmovq src, %rdi
+	irmovq dest, %rsi
+	irmovq $3, %rdx
+	call copy_block
+	ret
+
+copy_block:
+	irmovq $1, %r8
+	irmovq $8, %r10
+	xorq %rax, %rax
+	andq %rdx, %rdx
+	jle done
+
+loop:
+	mrmovq (%rdi), %r11
+	rmmovq %r11, (%rsi)
+	addq %r10, %rdi
+	addq %r10, %rsi
+	xorq %r11, %rax
+	subq %r8, %rdx
+	andq %rdx, %rdx
+	jg loop
+
+done:
+	ret
+
+	.pos 0x400
+stack:

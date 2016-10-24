@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="42CE1692-6C84-1C2A-3997-EB1774B864C5" name="A_Parents_Children">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 01:55:35 UTC</createdTime>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<engineerTo>
+<item key="5361FD82-3EBA-EE18-71D8-78BFAD237B52" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="parents_children_id" id="787B66E9-8F57-7529-499D-06DC311D0407">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 01:55:45 UTC</createdTime>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<engineerTo>
+<item key="5361FD82-3EBA-EE18-71D8-78BFAD237B52" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="person_id" id="7BC7289A-B5B9-842B-470F-3D02ED8C81D1">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:00:03 UTC</createdTime>
+<generatorID>224DB0A7-D14C-CF64-E55D-FC8C1D01CD5A</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<engineerTo>
+<item key="5361FD82-3EBA-EE18-71D8-78BFAD237B52" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1728BFF1-15CF-3A16-5C80-D87CDAACB793</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="person_id1" id="126CAF1E-913A-0BB8-65C4-852B2A7AD915">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:00:10 UTC</createdTime>
+<generatorID>52886CEB-E2D3-3A20-FD34-09C1B1074939</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<engineerTo>
+<item key="5361FD82-3EBA-EE18-71D8-78BFAD237B52" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1728BFF1-15CF-3A16-5C80-D87CDAACB793</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE7F7C67-EA58-3FE5-B25C-77E0846A6F58" name="A_Parents_Children PK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 01:55:54 UTC</createdTime>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<engineerTo>
+<item key="5361FD82-3EBA-EE18-71D8-78BFAD237B52" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>787B66E9-8F57-7529-499D-06DC311D0407</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

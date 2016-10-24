@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1C4FF1F5-74AE-654D-32A5-661B840883DB" name="A_Parents_Children">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>42CE1692-6C84-1C2A-3997-EB1774B864C5</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="parents_children_id" id="B3DB8BA4-1C83-0C86-63C8-C8FA68DBD5AB">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>787B66E9-8F57-7529-499D-06DC311D0407</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="A_Person_person_id" id="2A2B37B6-5D65-B4AF-F393-CC3055D00009">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>7BC7289A-B5B9-842B-470F-3D02ED8C81D1</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93B0ED67-3987-0EFE-23A6-BB2CC2FF2A2D" referredColumn="2B36EBDC-9340-7B53-7B69-A2998C3F07E7"/>
+</associations>
+</Column>
+<Column name="A_Person_person_id2" id="4B3C1026-2BBC-33B4-E379-CD625117A438">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>126CAF1E-913A-0BB8-65C4-852B2A7AD915</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E68C00DB-BD10-EC8B-8F35-247F6E715781" referredColumn="2B36EBDC-9340-7B53-7B69-A2998C3F07E7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="464ABF38-ECF5-AD7B-F4E1-219CD34E3779" name="A_Parents_Children_PK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>DE7F7C67-EA58-3FE5-B25C-77E0846A6F58</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3DB8BA4-1C83-0C86-63C8-C8FA68DBD5AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="177D7571-1198-ADB8-ED17-6EB088986207" name="A_Par_Chi_A_Person_FK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>224DB0A7-D14C-CF64-E55D-FC8C1D01CD5A</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A2B37B6-5D65-B4AF-F393-CC3055D00009"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C091AE0-E09E-487C-D0A9-E3C317DA975D" name="A_Par_Chi_A_Person_FKv1">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>52886CEB-E2D3-3A20-FD34-09C1B1074939</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B3C1026-2BBC-33B4-E379-CD625117A438"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

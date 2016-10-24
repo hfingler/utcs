@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="part1_conceptual_model" id="AFE469CB-C39E-78AC-7950-31CEB7503F38" version="3.5">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 03:14:35 UTC</createdTime>
+<ownerDesignName>part1_conceptual_model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>AFE469CB-C39E-78AC-7950-31CEB7503F38</designId>
+</OSDM_Design>

@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="840FDEBE-B552-1C7E-BC62-D30895AD4008" name="A_Employees_Projects">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>22666E9A-5564-D358-1479-32C6F4C0ABB6</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employees_projects_id" id="D0D1070F-0902-70BB-4A13-498CB85A80AE">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>2C52B031-0C2D-CAAF-339D-0CAE71F32F4D</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="A_Person_person_id" id="95BEADF2-3B14-9335-12E2-C02F6D1D4657">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>D375F4FA-D579-FB59-02EE-6C5B7774A45A</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3CD3497A-599A-D60F-50FB-FD63D08EC2BB" referredColumn="2B36EBDC-9340-7B53-7B69-A2998C3F07E7"/>
+</associations>
+</Column>
+<Column name="A_Project_project_no" id="AC38CFEE-07A6-80D7-7D83-049514272806">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-28 01:48:03 UTC</createdTime>
+<generatorID>5DD1A2EE-67A1-1D53-75AB-0585B6AFED88</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58ED2DF8-BE03-6C50-0394-C3BF372A9557" referredColumn="97799A99-38D4-C426-4068-67F74B44CFE5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17834FF9-EBDC-7EAB-95FE-DB92E4952BE5" name="A_Employees_Projects_PK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>9FEA3015-C151-6765-5675-C85FF720951C</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0D1070F-0902-70BB-4A13-498CB85A80AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E631FEDB-12A5-B101-44C3-06167764A7EB" name="A_Emps_Projs_A_Person_FK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>5662468B-738E-2AD3-3CB6-15BA8DCDE01A</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="95BEADF2-3B14-9335-12E2-C02F6D1D4657"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="362017ED-8644-8B2F-F386-A1C953A6D036" name="A_Emps_Projs_A_Project_FK">
+<createdBy>ctlente</createdBy>
+<createdTime>2016-03-26 02:03:35 UTC</createdTime>
+<generatorID>713BFDEF-B8E1-AF07-8B75-18BBEC6AB4D3</generatorID>
+<ownerDesignName>part1_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC38CFEE-07A6-80D7-7D83-049514272806"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

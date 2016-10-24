@@ -1,0 +1,127 @@
+truncate table A_Employees_Projects;
+truncate table A_Parents_Children;
+
+alter table A_Employees_Projects disable constraint A_Emps_Projs_A_Person_FK;
+alter table A_Employees_Projects disable constraint A_Emps_Projs_A_Project_FK;
+alter table A_Parents_Children disable constraint A_Par_Chi_A_Person_FK;
+alter table A_Parents_Children disable constraint A_Par_Chi_A_Person_FKv1;
+alter table A_Person disable constraint A_Person_A_Department_FK;
+alter table A_Person disable constraint A_Person_A_Person_FK;
+alter table A_Person disable constraint A_Person_A_Person_FKv2;
+alter table A_Project disable constraint A_Project_A_Department_FK;
+alter table A_Project disable constraint A_Project_A_Person_FK;
+alter table A_Project disable constraint A_Project_A_Project_FK;
+
+truncate table A_Department;
+truncate table A_Person;
+truncate table A_Project;
+
+alter trigger A_Department_PK_trig disable;
+alter trigger A_Employees_Projects_PK_trig disable;
+alter trigger A_Parents_Children_PK_trig disable;
+alter trigger A_Person_PK_trig disable;
+alter trigger A_Project_PK_trig disable;
+
+alter trigger A_Department_AUD_trig disable;
+alter trigger A_Employees_Projects_AUD_trig disable;
+alter trigger A_Parents_Children_AUD_trig disable;
+alter trigger A_Person_AUD_trig disable;
+alter trigger A_Project_AUD_trig  disable;
+
+alter trigger A_Employee_trigger  disable;
+alter trigger A_Previous_Employee_trigger  disable;
+alter trigger A_Project_Employee_trigger  disable;
+alter trigger A_Manager_trigger  disable;
+alter trigger A_President_trigger  disable;
+alter trigger A_Interim_Manager_trigger  disable;
+alter trigger A_Current_Project_trigger  disable;
+alter trigger A_Previous_Project_trigger  disable;
+
+alter table A_Employees_Projects disable constraint A_Employees_Projects_PK;
+alter table A_Parents_Children disable constraint A_Parents_Children_PK;
+alter table A_Department disable constraint A_Department_PK;
+alter table A_Project disable constraint A_Project_PK;
+alter table A_Person disable constraint A_Person_PK;
+
+
+INSERT INTO A_Department(dept_no, dept_name) VALUES (1, 'Dept1');
+INSERT INTO A_Department(dept_no, dept_name) VALUES (2, 'Dept2');
+INSERT INTO A_Department(dept_no, dept_name) VALUES (3, 'Dept3');
+INSERT INTO A_Department(dept_no, dept_name) VALUES (4, 'Dept4');
+INSERT INTO A_Department(dept_no, dept_name) VALUES (5, 'Dept5');
+
+INSERT INTO A_Employees_Projects(employees_projects_id, A_Person_person_id, A_Project_project_no)
+VALUES (1, 6, 1);
+
+INSERT INTO A_Parents_Children(parents_children_id, A_Person_person_id, A_Person_person_id2)
+VALUES (11, 1, 3);
+INSERT INTO A_Parents_Children(parents_children_id, A_Person_person_id, A_Person_person_id2)
+VALUES (12, 1, 4);
+INSERT INTO A_Parents_Children(parents_children_id, A_Person_person_id, A_Person_person_id2)
+VALUES (21, 2, 3);
+INSERT INTO A_Parents_Children(parents_children_id, A_Person_person_id, A_Person_person_id2)
+VALUES (22, 2, 4);
+
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (1, 'Name1', 'Surname1', 'Somewhere', 11111, 111, 1, 0, 100000, 2, 1, 10000, 'Person', null, 2, 1);
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (2, 'Name2', 'Surname1', 'Somewhere', 22222, 222, 0, 0, 200000, 1, 0, 20000, 'Employee', 6, 1, 2);
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (3, 'Name3', 'Surname1', 'Somewhere', 33333, 333, 1, 0, 30000, 3, 1, 3000, 'Manager', 1, null, 1);
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (4, 'Name4', 'Surname1', 'Somewhere', 44444, 444, 1, 1, 4000, 4, 0, 400, 'President', null, null, null);
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (5, 'Name5', 'Surname2', 'Here', 55555, 555, 0, 1, 5000, 5, 1, 500, 'Interim Manager', null, null, 4);
+INSERT INTO A_Person(person_id, first_name, last_name, home_address, zipcode, home_phone, us_citizen, is_fired, salary, employee_id, salary_exception, bonus, type, A_Person_person_id, A_Person_person_id2, A_Department_dept_no)
+VALUES (6, 'Name6', 'Surname3', 'There', 66666, 666, 1, 0, 60000, 6, 0, 6000, 'Project Employee', null, null, 5);
+
+INSERT INTO A_Project(project_no, project_title, project_active, end_date, est_person_hours, type, A_Person_person_id, A_Project_project_no, A_Department_dept_no)
+VALUES (1, 'Proj1', 1, TO_DATE('2111/01/01', 'yyyy/mm/dd'), 111, 'Current Project', 3, null, 1);
+INSERT INTO A_Project(project_no, project_title, project_active, end_date, est_person_hours, type, A_Person_person_id, A_Project_project_no, A_Department_dept_no)
+VALUES (2, 'Proj2', 1, TO_DATE('2022/02/02', 'yyyy/mm/dd'), 222, 'Current Project', 3, 1, 1);
+INSERT INTO A_Project(project_no, project_title, project_active, end_date, est_person_hours, type, A_Person_person_id, A_Project_project_no, A_Department_dept_no)
+VALUES (3, 'Proj3', 0, TO_DATE('2033/03/03', 'yyyy/mm/dd'), 333, 'Current Project', 4, 2, 1);
+INSERT INTO A_Project(project_no, project_title, project_active, end_date, est_person_hours, type, A_Person_person_id, A_Project_project_no, A_Department_dept_no)
+VALUES (4, 'Proj4', 1, TO_DATE('2044/04/04', 'yyyy/mm/dd'), 444, 'Previous Project', 4, 5, 5);
+INSERT INTO A_Project(project_no, project_title, project_active, end_date, est_person_hours, type, A_Person_person_id, A_Project_project_no, A_Department_dept_no)
+VALUES (5, 'Proj5', 1, TO_DATE('2055/05/05', 'yyyy/mm/dd'), 555, 'Previous Project', 3, null, 5);
+
+
+alter trigger A_Department_PK_trig enable;
+alter trigger A_Employees_Projects_PK_trig enable;
+alter trigger A_Parents_Children_PK_trig enable;
+alter trigger A_Person_PK_trig enable;
+alter trigger A_Project_PK_trig enable;
+
+alter trigger A_Department_AUD_trig enable;
+alter trigger A_Employees_Projects_AUD_trig enable;
+alter trigger A_Parents_Children_AUD_trig enable;
+alter trigger A_Person_AUD_trig enable;
+alter trigger A_Project_AUD_trig  enable;
+
+alter trigger A_Employee_trigger  enable;
+alter trigger A_Previous_Employee_trigger  enable;
+alter trigger A_Project_Employee_trigger  enable;
+alter trigger A_Manager_trigger  enable;
+alter trigger A_President_trigger  enable;
+alter trigger A_Interim_Manager_trigger  enable;
+alter trigger A_Current_Project_trigger  enable;
+alter trigger A_Previous_Project_trigger  enable;
+
+
+alter table A_Department enable constraint A_Department_PK;
+alter table A_Employees_Projects enable constraint A_Employees_Projects_PK;
+alter table A_Parents_Children enable constraint A_Parents_Children_PK;
+alter table A_Person enable constraint A_Person_PK;
+alter table A_Project enable constraint A_Project_PK;
+
+alter table A_Employees_Projects enable constraint A_Emps_Projs_A_Person_FK;
+alter table A_Employees_Projects enable constraint A_Emps_Projs_A_Project_FK;
+alter table A_Parents_Children enable constraint A_Par_Chi_A_Person_FK;
+alter table A_Parents_Children enable constraint A_Par_Chi_A_Person_FKv1;
+alter table A_Person enable constraint A_Person_A_Department_FK;
+alter table A_Person enable constraint A_Person_A_Person_FK;
+alter table A_Person enable constraint A_Person_A_Person_FKv2;
+alter table A_Project enable constraint A_Project_A_Department_FK;
+alter table A_Project enable constraint A_Project_A_Person_FK;
+alter table A_Project enable constraint A_Project_A_Project_FK;

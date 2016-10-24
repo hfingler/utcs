@@ -1,0 +1,68 @@
+// HW8.sim -- Homework 8
+//
+// Caio Lente
+// UT EID: ctl684, UTCS username: ctlente
+// C S 347, Spring 2016, Dr. P. Cannata
+// Department of Computer Science, The University of Texas at Austin
+//
+
+CLASS person (person_id: INTEGER, REQUIRED; name: STRING; telephone: INTEGER; fax: INTEGER;);
+
+SUBCLASS employee OF person (employee_id: INTEGER;);
+
+SUBCLASS sales_person OF employee (works_in: territory, INVERSE IS has_sales_people;);
+
+SUBCLASS customer OF person (address: STRING; city: STRING; state: STRING; zip: INTEGER; lives_in: territory, MV(DISTINCT), INVERSE IS has_customers; ordered: order, MV(DISTINCT), INVERSE IS made_by;);
+
+CLASS territory (territory_id: INTEGER, REQUIRED; name: STRING; has_customers: customer, MV(DISTINCT), INVERSE IS lives_in; has_sales_people: sales_person, MV(DISTINCT), INVERSE IS works_in;);
+
+CLASS order (order_id: INTEGER, REQUIRED; date: STRING; made_up_of: product, MV(DISTINCT), INVERSE IS is_in_orders; made_by: customer, INVERSE IS ordered;);
+
+CLASS product (product_id: INTEGER, REQUIRED; name: STRING; description: STRING; price: INTEGER; is_in_order: order, MV(DISTINCT), INVERSE IS made_up_of; has_documents: document, MV(DISTINCT), INVERSE IS is_from_product;);
+
+CLASS document (document_id: INTEGER, REQUIRED; filename: STRING; file_mimetype: STRING; file_charset: STRING; file_blob: STRING; file_comments: STRING; tags: STRING; is_form_product: product, INVERSE IS has_documents;);
+
+
+
+INSERT territory (territory_id := 1, name := "North");
+INSERT territory (territory_id := 2, name := "South");
+
+INSERT customer (person_id := 1, name := "Alice", telephone := 1111111, fax := 1111110, address := "1 Main St.", city := "Austin", state := "TX", zip := "11111");
+INSERT customer (person_id := 2, name := "Bob", telephone := 2222222, fax := 2222220, address := "2 Main St.", city := "New York", state := "NY", zip := "22222");
+INSERT customer (person_id := 3, name := "Caio", telephone := 3333333, fax := 3333330, address := "3 Main St.", city := "Los Angeles", state := "CA", zip := "33333");
+INSERT customer (person_id := 4, name := "Dave", telephone := 4444444, fax := 4444440, address := "4 Main St.", city := "Chicago", state := "IL", zip := "44444");
+
+INSERT sales_person (person_id := 5, name := "Ellen", telephone := 5555555, fax := 5555550, employee_id := 1);
+INSERT sales_person (person_id := 6, name := "Fin", telephone := 6666666, fax := 6666660, employee_id := 2);
+
+INSERT product (product_id := 1, name := "Abacus", description := "An abacus", price := 10);
+INSERT product (product_id := 2, name := "Bike", description := "A bike", price := 20);
+
+INSERT order (order_id := 1, date := "01/01/01");
+INSERT order (order_id := 2, date := "02/02/02");
+
+
+
+MODIFY LIMIT = ALL customer (lives_in := territory WITH (territory_id = 1)) WHERE person_id = 1 OR person_id = 2;
+MODIFY LIMIT = ALL customer (lives_in := territory WITH (territory_id = 2)) WHERE person_id = 3 OR person_id = 4;
+
+MODIFY LIMIT = ALL sales_person (works_in := territory WITH (territory_id = 1)) WHERE person_id = 5;
+MODIFY LIMIT = ALL sales_person (works_in := territory WITH (territory_id = 2)) WHERE person_id = 6;
+
+MODIFY LIMIT = ALL product (is_in_order := order WITH (order_id = 1)) WHERE product_id = 1 OR product_id = 2;
+MODIFY LIMIT = ALL product (is_in_order := order WITH (order_id = 2)) WHERE product_id = 1 OR product_id = 2;
+MODIFY LIMIT = ALL customer (ordered := order WITH (order_id = 1)) WHERE person_id = 1;
+MODIFY LIMIT = ALL customer (ordered := order WITH (order_id = 2)) WHERE person_id = 2;
+
+
+
+from person retrieve *;
+from employee retrieve *;
+from territory retrieve *;
+from sales_person retrieve *, name OF works_in;
+from customer retrieve *, date OF ordered, name OF made_up_of, OF ordered;
+
+// 01. EVA stands for entity-valued attributes
+// 02. They are called EVAs because they establish a bidirectional relationship between the entity in its owning class and the entities of a target class
+// 03. No, there aren't neither primary nor foreign keys in the WDB database
+// 04. They got populated through the WDB equivalent of Views (sales_person_view and customer_view)
